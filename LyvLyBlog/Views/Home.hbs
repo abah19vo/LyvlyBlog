@@ -1,0 +1,109 @@
+
+{{#if partialIsActive}}
+
+  {{>getHomeError homeError}} 
+  {{>udError errors}}
+  {{>homeUpdateDelete success}}
+
+
+{{else}}
+
+  <main>
+
+    <div class="parallax">
+      <div class="parallax-top-left" tabindex="1"></div>
+      <div class="parallax-top-right" tabindex="2"></div>
+      <div class="parallax-bottom-left" tabindex="3"></div>
+      <div class="parallax-bottom-right" tabindex="4"></div>
+      <div class="parallax-content">
+        <div class="parallax-front">
+          <h1 id="content_paragraf">Welcome to LivLyBlog </h1>
+        </div>
+        <div class="parallax-back">
+          <img src="theBazar.jpeg" class="img-responsive rounded">
+        </div>
+      </div>
+    </div>
+    <div class="all_mainContent">
+      <div class="divider " ></div>
+      <div id="home_page_link" class="card">
+        <div id="about_page" class="card-text">
+          <div id="home_page_share" class="portada"></div>
+          <div id="about_page" class="title-total">   
+            <div class="title">Ahmad Abdullah</div>
+            <h2>Share with us your amazing story that would change someones mind</h2>
+            <div id="about_page" class="desc">
+              <p>But its important to share your experience with us and every 
+                because some how your story can change someones perspectiv of 
+                using the free time.</p>
+              <a href="#share_section">click here to Share With us Your Amazing Story</a>
+            </div>
+          </div> 
+        </div>
+      </div>
+      {{#if pagecontent.length}}
+        {{#each pagecontent}}
+          <div class="divider" ></div>
+          <div class="hero bg-lg">
+            <div class="hero-body"> 
+              <h1>{{title}}</h1>
+              <h6>By: {{name}}</h6>
+              <h6><span  id="position">The Story Takes Place in:</span>  {{position}}</h6>
+              <p>{{content}}</p>
+              <button class="btn btn-link"><a href="/post/{{id}}">click here to read the cooments and create a newcomment to the post</a></button>
+              {{#if ../isLoggedIn}}
+                <div>
+                  <form action="/delete-content/{{id}}" method="POST">
+                    <input type="hidden" name="_csrf" value="{{../csrfTokenFunc}}">
+                    <input class="bg-error" type="submit" value="Delete">
+                  </form>
+                  <form action="/Update-content/{{id}}">
+                    <input type="hidden" name="_csrf" value="{{../csrfTokenFunc}}">
+                    <input class="bg-warning" type="submit" value="Update">
+                  </form>
+                </div>
+              {{/if}}
+            </div>
+          </div> 
+        {{/each}}
+      {{else}}
+        <div class="hero bg-lg">
+          <div class="hero-body">
+            <h2>There is No Content Right Now</h2>
+            <h4 id="emptycontent">But don't forget to Share With us Your Amazing Story</h4>
+            <p id="emoji">&#128540;</p>
+
+          </div>
+        </div>
+      {{/if}}
+
+      <div class="divider" ></div>
+      <div class="hero bg-lg">
+        <div class="hero-body">
+          <h1 id="share_section">Share With us Your Amazing Story</h1>
+          {{> uploadingErrors validationErrors}}
+          <form class="form-horizontal" action="" method="POST"> 
+              <input type="hidden" name="_csrf" value="{{csrfTokenFunc}}">      
+              <div class="form-group">
+              <h4 class="form-label" for="input-example-2"  >Name</h4>
+              <input class="form-input" type="text" name="name" id="input-example-1" value="{{name}}" placeholder="E.X Ahmad Abdullah">
+              </div>
+              <div class="form-group">
+              <h4 class="form-label" for="input-example-1">Where does your story take place ?</h4>
+              <input class="form-input" type="text" name="position" id="input-example-1" value="{{position}}" placeholder="E.X Sweden, Ulricehamn">
+              </div>
+              <div class="form-group">
+              <h4 class="form-label"  for="input-example-1">Title</h4>
+              <input class="form-input"name="title" type="text" id="input-example-1" value="{{title}}" placeholder="E.X Discovering my Bookshellf">
+              </div>
+              <div class="form-group">
+              <h4 class="form-label"  for="input-example-3">Content</h4>
+              <textarea class="form-input" name="content" id="input-example-3" placeholder="Textarea" rows="3">{{content}}</textarea>
+              </div>
+              <button class="btn btn-primary input-group-btn" value="Create class">Submit</button> 
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+{{/if}}

@@ -1,0 +1,63 @@
+{{#if partialIsActive}}
+    {{>udError errors}}
+    {{>feedbackUpdateDelete success}}
+{{else}}
+    <div class="all_mainContent"> 
+        <div class="empty">
+            <div class="hero-body">
+                <h1>Send us your Feedback</h1>
+                {{> uploadingErrors validationErrors}}
+                <form class="form-horizontal" action="" method="POST">
+                    <input type="hidden" name="_csrf" value="{{csrfTokenFunc}}">       
+                    <div class="form-group">
+                        <h4 class="form-label" for="input-example-2"  >Name</h4>
+                        <input class="form-input" type="text" name="postname" id="input-example-1" value="{{postname}}" placeholder="E.X Ahmad Abdullah">
+                    </div>
+                    <div class="form-group">
+                        <h4 class="form-label" for="input-example-1">subject</h4>
+                        <input class="form-input" type="text" name="subject" id="input-example-1" value="{{subject}}" placeholder="E.X Inspirde me to do a lot at my basement">
+                    </div>
+                    <div class="form-group">
+                        <h4 class="form-label"  for="input-example-3">feedback</h4>
+                        <textarea class="form-input" name="feedbackContent" id="input-example-3" placeholder="Textarea" rows="3">{{feedbackContent}}</textarea>
+                    </div>
+                    <button class="btn btn-primary input-group-btn" value="Create class">submit</button> 
+                </form>
+            </div>
+        </div>
+
+        {{#if feedback.length}}
+            {{#each feedback}}
+                <div class="hero bg-lg">
+                    <div class="hero-body">  
+                        <h1 >{{subject}}</h1>
+                        <h6>By: {{postname}}</h6>
+                        <p>{{feedbackContent}}</p>
+                        {{#if ../isLoggedIn}}
+                            <div>
+                                <form action="/delete-feedback/{{fId}}" method="POST">
+                                    <input type="hidden" name="_csrf" value="{{../csrfTokenFunc}}">
+                                    <input class="bg-error" type="submit" value="Delete">
+                                </form>
+                                <form action="/update-feedback/{{fId}}">
+                                    <input type="hidden" name="_csrf" value="{{../csrfTokenFunc}}">
+                                    <input class="bg-warning" type="submit" value="Update">
+                                </form>
+                            </div>
+                        {{/if}}
+                    </div>
+                </div> 
+                <div class="divider text-center" ></div>
+            {{/each}}
+        {{else}}
+            <div class="empty">
+                <div class="hero-body">
+                    <h2>There is No feedback Right Now</h2>
+                    <h4 id="emptycontent">But don't forget to Share With us Your Amazing Feedback</h4>
+                    <p id="emoji">&#128540;</p>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+
+{{/if}}

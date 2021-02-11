@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">    
+    <title>LyvlLyblog</title>
+    <link rel="stylesheet" href="/about.css">
+  </head>
+  <body>
+    <header >
+      <div class="off-canvas " >
+        <!-- off-screen toggle button -->
+        <a class="off-canvas-toggle btn btn-primary btn-action" href="#sidebar-id">
+          <i class="icon icon-menu"> </i>
+          Menu
+          </a>
+        <div id="sidebar-id" class="off-canvas-sidebar">
+          <ul>
+            <li> <i class="icon icon-photo"></i><a href="/" class="btn btn-link">Home</a></li>
+            <li> <i class="icon icon-location"></i><a href="/about" class="btn btn-link">About</a> </li>
+            <li> <i class="icon icon-mail"></i><a href="/contact" class="btn btn-link">Contact</a></li>
+            <li> <i class="icon icon-people"></i><a href="/guestBook" class="btn btn-link">Guest Book</a></li>
+          </ul>
+        </div>
+        <a class="off-canvas-overlay" href="#close"></a>
+      </div>
+    </header>	
+    <main>
+      {{{body}}}
+    </main>
+    {{#unless hideFooter}}  
+      <footer>
+        {{#if isLoggedIn}}
+          <form action="/logout" method="POST">
+            <input type="hidden" name="_csrf" value="{{csrfTokenFunc}}">
+            <input class="btn btn-link" id="footer"    type="submit" value="Logout">
+          </form>
+        {{else}}
+          <a href="/login" class="btn btn-link"  id="footer">Login</a>
+        {{/if}}
+      </footer>
+    {{/unless}}
+  </body>
+</html>

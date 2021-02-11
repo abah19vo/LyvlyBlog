@@ -1,0 +1,402 @@
+html{
+  scroll-behavior: smooth;
+}
+p,h1{
+  color:gray;
+  
+}
+
+h6{
+  color:lightgrey;
+  font-family:"Comic Sans MS";
+}
+
+ol li, ul li {
+  margin-top: 4em;
+}
+body{
+  background-color: whitesmoke;
+}
+
+#content_paragraf{
+  color: white
+}
+
+i.icon {
+  font-size: xx-large;
+  color: orange;
+}
+
+.divider {
+  border-top: .05rem solid black; 
+  height: .05rem;
+  margin: 5em;
+}
+
+
+.btn.btn-primary{
+  font-size:30px;
+  background: none;
+  color: black;
+  border: none;
+  margin: auto;
+}
+
+.btn.btn-primary:hover{
+  background: none;
+  color: gray;
+  border:none;
+}
+a.btn.btn-link{
+  margin: auto;
+  color: black;
+  font-size: 32px;
+  margin-top: 5%;
+  margin-bottom:5%;
+}
+a.btn.btn-link:hover{
+  color: gray;
+}
+p#post{
+  color: black;
+  
+}
+
+p#emoji{
+  font-size:100px
+}
+
+
+button.btn.btn-primary.input-group-btn {
+  margin: auto;
+  background-color: darkgray;
+  color:white;
+  margin-top: 30px;
+  border-radius: 15px;
+}  
+button.btn.btn-primary.input-group-btn:hover{
+  background:black;
+
+}
+
+
+ul {
+  list-style: none;
+}
+h4#emptycontent{
+  color: gray
+}
+
+span#position{
+  color:gray
+}
+
+
+
+
+
+.all_mainContent{
+  max-width: 950px;
+  margin: auto;
+  margin-top:100px;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
+.card_div{
+  display: inline-block;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+
+.card {
+  border-radius: 3px;
+  max-width: 100%;
+  border-radius: 25px;
+  flex-direction: row;
+  margin:auto;
+  margin-bottom:75pxpx;
+  background: #fff;
+  border: .05rem solid #dadee4;
+  border-radius: .1rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.card h2 {
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.card .title {
+  padding: 1rem;
+  text-align: right;
+  color: lightblue;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+
+
+.card-text {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.title-total {
+  padding: 2.5em 1.5em 1.5em 1.5em;
+}
+
+
+
+
+
+.portada {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-image: url("vid_Sjön.jpg");
+  background-position: bottom center;
+  background-size: cover;
+}
+
+
+img.img-responsive.rounded {
+  height: 500px;
+  width: 100%;
+}
+
+img.img-fit-cover {
+  height: 500px;
+  width: 30%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.all_cards{
+  margin:auto;
+}
+
+  
+
+
+.parallax {
+  max-width: max-content;
+  width: 100%;
+  margin:0 auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.hero.bg-lg {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  border-radius: 25px;
+  background-color: white;
+  box-shadow: 0px 7px 40px rgba(34, 35, 58, 0.5);
+
+}
+
+.hero-body {
+  margin-left: 5%;
+  margin-right:5% ;
+  margin-bottom: 30px;
+}
+
+li#errorlist {
+  color:red;
+  font-weight:bold;
+}
+
+ul#errorlist {
+  list-style-type: square;
+}
+
+
+
+.column.col-6.col-xs-12 {
+  margin: auto;
+  margin-bottom: 75px;
+  border-radius: 25px;
+  background: white;
+  color: black;
+  border-color: black;
+  padding: 10px 10px 0px 10px;
+  box-shadow: 0px 7px 40px rgba(34, 35, 58, 0.5);
+ 
+
+}
+input#input-example-1:hover {
+  box-shadow: 0px 7px 40px rgba(34, 35, 58, 0.5);
+}
+input {
+  margin:10px;
+}
+textarea#input-example-3{
+  margin:10px;
+  min-width: 200px;
+  height: 400px;
+
+}
+
+
+footer{
+  padding: 10px 10px 0px 10px; 
+  margin-bottom: 0; 
+  width: 100%; 
+  max-height: fit-content; 
+  background: #262626;
+  margin-top: 20px;
+} 
+
+footer #footer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color:white;
+  font-size: 26px;
+}
+
+
+
+#success{
+  color: green;
+}
+
+@media(max-width:650px){
+  .parallax{
+    width: 95%;
+    margin-top:15%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+}
+
+
+
+#about_page.card{
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
+  max-width: 95%;
+  flex-direction: row;
+  border-radius: 25px;
+  margin-left: 0px;
+  margin-bottom:150px;
+}
+
+#home_page.card{
+  border-radius: 3px;
+  max-width: 100%;
+  border-radius: 25px;
+  flex-direction: row;
+  margin:auto;
+  margin-bottom:75pxpx;
+}
+#home_page_link.card{
+  border-radius: 3px;
+  max-width: 100%;
+  border-radius: 25px;
+  flex-direction: row;
+  margin:auto;
+  margin-bottom:75pxpx;
+}
+#about_page_link.card{
+  border-radius: 3px;
+  max-width: 100%;
+  border-radius: 25px;
+  flex-direction: row;
+  margin:auto;
+  margin-bottom:75pxpx;
+}
+
+
+
+
+#antalya.portada {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-image: url("antalya.png");
+  background-position: top left;
+  background-size: cover;
+}
+
+#about.all_mainContent{
+  max-width:80%;
+  margin: auto;
+  margin-top:300px;
+  padding: 10px;
+}
+
+#about_me_page.portada{
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-image: url("me-in\ mud.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+
+#home_page_share.portada {
+  background-image: url("homam_sharing_a_post.jpg");
+
+}
+
+
+p#about{
+  color:rgb(183, 181, 181)
+}
+
+#about_page_text.desc{
+  color: rgb(123, 120, 120);
+  font-style: italic;
+  box-sizing: unset;
+}
+
+.empty{
+  max-width: 700px;
+  margin: auto;
+  margin-top: 75px;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  box-shadow: 0px 14px 60px rgba(34, 35, 58, 0.5);
+
+
+}
+
+
+.center{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 300px ;
+  height:auto; 
+
+}
+
+@media (max-width:650px){
+  div#about_page {
+    box-sizing: unset;
+    padding-right: 10px;
+  }
+  .portada {
+    display: none;
+  }
+}
+
+

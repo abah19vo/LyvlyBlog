@@ -1,0 +1,32 @@
+{{#if partialIsActive}}
+    {{> udError errors}}
+{{else}}
+  <main>
+    <div class="all_mainContent">
+      <div class="hero bg-lg">
+        <h1>Update Your Amazing Story</h1>
+        {{> uploadingErrors validationErrors}}
+        <form class="form-horizontal" method="POST">
+          <input type="hidden" name="_csrf" value="{{csrfTokenFunc}}">       
+          <div class="form-group">
+            <h4 class="form-label" for="input-example-1">Name</h4>
+            <input class="form-input" type="text" name="name" id="input-example-1" value="{{pagecontent.name}}">
+          </div>
+          <div class="form-group">
+            <h4 class="form-label" for="input-example-1">Where are you from</h4>
+            <input class="form-input" type="text" name="position" id="input-example-1" value="{{pagecontent.position}}">
+          </div>
+          <div class="form-group">
+            <h4 class="form-label"  for="input-example-1">Title</h4>
+            <input class="form-input"name="title" type="text" id="input-example-1" value="{{pagecontent.title}}">
+          </div>
+          <div class="form-group">
+            <h4 class="form-label"  for="input-example-3">Content</h4>
+            <textarea class="form-input" name="content" id="input-example-3"   rows="3">{{pagecontent.content}} </textarea>
+          </div>        
+          <input type="submit" class="bg-warning" value="Update">
+        </form>
+      </div>
+    </div>
+  </main>
+{{/if}}
